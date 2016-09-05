@@ -3,6 +3,19 @@
 
 #include <QObject>
 
+
+
+
+struct CData
+{
+    QString sAction;
+    QString sType;
+    QStringList listData;
+    QList<QStringList> dData;
+};
+
+
+
 class Network :public QObject
 {
     Q_OBJECT
@@ -30,6 +43,13 @@ public:
      * @return
      */
     int connectHost(QString sIp, QString sPort, QByteArray arrInput, QByteArray &arrOutput, int iWaitTimer=10000);
+
+
+    QByteArray encode(CData data);
+
+    CData decode(QByteArray arrData);
+
+
 
 
 signals:

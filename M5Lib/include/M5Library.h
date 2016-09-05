@@ -38,37 +38,6 @@ public:
 
 
 
-//    //TCP Server==========================================================
-
-//    void runTcpServer(QString sPort);
-
-//    void recallClient(QByteArray arr);
-
-//    //SQL================================================================
-//    /**
-//     * @brief dbOpen
-//     * @param sDbName
-//     * @param sIp
-//     * @param sPort
-//     * @param sUser
-//     * @param sPassword
-//     * @return
-//     */
-//    bool openDb(QString sDbName, QString sUser, QString sPassword,QString sIp, QString sPort="3306",_db_type type=_mysql);
-
-//    void closeDb();
-
-//    /**
-//     * @brief getCurrentDb
-//     * @return
-//     */
-//    QSqlDatabase& getCurrentDb();
-
-//    QList<QVariantList> getTable(QString sTableName);
-
-
-
-
 private:
     static M5Library* m_pInstance;
 

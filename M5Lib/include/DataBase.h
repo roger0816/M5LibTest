@@ -44,6 +44,7 @@ public:
 
         QList<QVariantList> getTable(QString sTableName);
 
+        void insertDb(QString sTableName,QMap<QString,QString> data);
 
 signals:
     void signalLog(QString st);
