@@ -1,6 +1,8 @@
 ﻿#include "DataBase.h"
 #include "CSql.h"
-
+#include <QMap>
+#include <QVariantList>
+#include <QVariant>
 CSql *sql=0;
 
 DataBase::DataBase(QObject *parent) : QObject(parent)

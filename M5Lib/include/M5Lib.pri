@@ -36,5 +36,3 @@ HEADERS += \
 
 SOURCES += \
 
-
-

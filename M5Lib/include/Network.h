@@ -2,7 +2,7 @@
 #define NETWORK_H
 
 #include <QObject>
-
+#include <QStringList>
 
 
 
