@@ -12,7 +12,7 @@ MAKEFILE      = Makefile
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_SQL_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/home/roger/q_project/M5Libtest"'
+DEFINES       = -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_SQL_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/home/roger/q_project/M5LibTest"'
 CFLAGS        = -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -O2 -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 INCPATH       = -I. -IM5Lib/include -IM5Lib/include -I../../Qt5.7.0/5.7/gcc_64/include -I../../Qt5.7.0/5.7/gcc_64/include/QtWidgets -I../../Qt5.7.0/5.7/gcc_64/include/QtGui -I../../Qt5.7.0/5.7/gcc_64/include/QtNetwork -I../../Qt5.7.0/5.7/gcc_64/include/QtSql -I../../Qt5.7.0/5.7/gcc_64/include/QtTest -I../../Qt5.7.0/5.7/gcc_64/include/QtCore -Iobj -Iobj/ui_header -I../../Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++
@@ -33,10 +33,10 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = M5LibTest1.0.0
-DISTDIR = /home/roger/q_project/M5Libtest/obj/M5LibTest1.0.0
+DISTDIR = /home/roger/q_project/M5LibTest/obj/M5LibTest1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1 -Wl,-rpath,/home/roger/Qt5.7.0/5.7/gcc_64/lib
-LIBS          = $(SUBLIBS) -L/home/roger/q_project/M5Libtest/M5Lib/ -lM5Lib -L/home/roger/Qt5.7.0/5.7/gcc_64/lib -lQt5Widgets -L/usr/lib64 -lQt5Gui -lQt5Network -lQt5Sql -lQt5Test -lQt5Core -lGL -lpthread 
+LIBS          = $(SUBLIBS) -L/home/roger/q_project/M5LibTest/M5Lib/ -lM5LibLinux -L/home/roger/Qt5.7.0/5.7/gcc_64/lib -lQt5Widgets -L/usr/lib64 -lQt5Gui -lQt5Network -lQt5Sql -lQt5Test -lQt5Core -lGL -lpthread 
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -222,7 +222,7 @@ TARGET        = M5LibTest
 first: all
 ####### Build rules
 
-$(TARGET): /home/roger/q_project/M5Libtest/M5Lib/libM5Lib.a obj/ui_header/ui_widget.h $(OBJECTS)  
+$(TARGET): /home/roger/q_project/M5LibTest/M5Lib/libM5LibLinux.a obj/ui_header/ui_widget.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: M5LibTest.pro ../../Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++/qmake.conf ../../Qt5.7.0/5.7/gcc_64/mkspecs/features/spec_pre.prf \
@@ -656,7 +656,7 @@ obj/moc_M5Library.cpp: ../../Qt5.7.0/5.7/gcc_64/include/QtCore/QObject \
 		M5Lib/include/DataBase.h \
 		M5Lib/include/M5Library.h \
 		../../Qt5.7.0/5.7/gcc_64/bin/moc
-	/home/roger/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/home/roger/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/roger/q_project/M5Libtest -I/home/roger/q_project/M5Libtest/M5Lib/include -I/home/roger/q_project/M5Libtest/M5Lib/include -I/home/roger/Qt5.7.0/5.7/gcc_64/include -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtGui -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtSql -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtTest -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtCore -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include M5Lib/include/M5Library.h -o obj/moc_M5Library.cpp
+	/home/roger/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/home/roger/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/roger/q_project/M5LibTest -I/home/roger/q_project/M5LibTest/M5Lib/include -I/home/roger/q_project/M5LibTest/M5Lib/include -I/home/roger/Qt5.7.0/5.7/gcc_64/include -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtGui -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtSql -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtTest -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtCore -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include M5Lib/include/M5Library.h -o obj/moc_M5Library.cpp
 
 obj/moc_Network.cpp: ../../Qt5.7.0/5.7/gcc_64/include/QtCore/QObject \
 		../../Qt5.7.0/5.7/gcc_64/include/QtCore/qobject.h \
@@ -708,7 +708,7 @@ obj/moc_Network.cpp: ../../Qt5.7.0/5.7/gcc_64/include/QtCore/QObject \
 		../../Qt5.7.0/5.7/gcc_64/include/QtCore/qobject_impl.h \
 		M5Lib/include/Network.h \
 		../../Qt5.7.0/5.7/gcc_64/bin/moc
-	/home/roger/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/home/roger/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/roger/q_project/M5Libtest -I/home/roger/q_project/M5Libtest/M5Lib/include -I/home/roger/q_project/M5Libtest/M5Lib/include -I/home/roger/Qt5.7.0/5.7/gcc_64/include -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtGui -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtSql -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtTest -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtCore -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include M5Lib/include/Network.h -o obj/moc_Network.cpp
+	/home/roger/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/home/roger/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/roger/q_project/M5LibTest -I/home/roger/q_project/M5LibTest/M5Lib/include -I/home/roger/q_project/M5LibTest/M5Lib/include -I/home/roger/Qt5.7.0/5.7/gcc_64/include -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtGui -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtSql -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtTest -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtCore -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include M5Lib/include/Network.h -o obj/moc_Network.cpp
 
 obj/moc_DataBase.cpp: ../../Qt5.7.0/5.7/gcc_64/include/QtCore/QObject \
 		../../Qt5.7.0/5.7/gcc_64/include/QtCore/qobject.h \
@@ -763,7 +763,7 @@ obj/moc_DataBase.cpp: ../../Qt5.7.0/5.7/gcc_64/include/QtCore/QObject \
 		../../Qt5.7.0/5.7/gcc_64/include/QtSql/qsql.h \
 		M5Lib/include/DataBase.h \
 		../../Qt5.7.0/5.7/gcc_64/bin/moc
-	/home/roger/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/home/roger/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/roger/q_project/M5Libtest -I/home/roger/q_project/M5Libtest/M5Lib/include -I/home/roger/q_project/M5Libtest/M5Lib/include -I/home/roger/Qt5.7.0/5.7/gcc_64/include -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtGui -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtSql -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtTest -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtCore -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include M5Lib/include/DataBase.h -o obj/moc_DataBase.cpp
+	/home/roger/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/home/roger/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/roger/q_project/M5LibTest -I/home/roger/q_project/M5LibTest/M5Lib/include -I/home/roger/q_project/M5LibTest/M5Lib/include -I/home/roger/Qt5.7.0/5.7/gcc_64/include -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtGui -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtSql -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtTest -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtCore -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include M5Lib/include/DataBase.h -o obj/moc_DataBase.cpp
 
 obj/moc_widget.cpp: ../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/QWidget \
 		../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/qwidget.h \
@@ -864,7 +864,7 @@ obj/moc_widget.cpp: ../../Qt5.7.0/5.7/gcc_64/include/QtWidgets/QWidget \
 		../../Qt5.7.0/5.7/gcc_64/include/QtGui/qtouchdevice.h \
 		widget.h \
 		../../Qt5.7.0/5.7/gcc_64/bin/moc
-	/home/roger/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/home/roger/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/roger/q_project/M5Libtest -I/home/roger/q_project/M5Libtest/M5Lib/include -I/home/roger/q_project/M5Libtest/M5Lib/include -I/home/roger/Qt5.7.0/5.7/gcc_64/include -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtGui -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtSql -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtTest -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtCore -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include widget.h -o obj/moc_widget.cpp
+	/home/roger/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/home/roger/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/roger/q_project/M5LibTest -I/home/roger/q_project/M5LibTest/M5Lib/include -I/home/roger/q_project/M5LibTest/M5Lib/include -I/home/roger/Qt5.7.0/5.7/gcc_64/include -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtGui -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtSql -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtTest -I/home/roger/Qt5.7.0/5.7/gcc_64/include/QtCore -I/usr/include/c++/4.8 -I/usr/include/x86_64-linux-gnu/c++/4.8 -I/usr/include/c++/4.8/backward -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include widget.h -o obj/moc_widget.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
