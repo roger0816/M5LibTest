@@ -30,10 +30,17 @@ int CTcpClient::connectHost(QString sIp,QString sPort,QByteArray arrInput,QByteA
         //   m_socket->bytesWritten(inBuffer);
         m_socket->waitForBytesWritten(iWaitTimer);
         emit signalLog("socket written ok");
-        m_socket->waitForReadyRead(iWaitTimer);
 
+        while (true)
+        {
+            if(m_socket->waitForReadyRead(iWaitTimer) == false)
+            {
+                break;
+            }
 
-        arrOutput=m_socket->readAll();
+            arrOutput.append(m_socket->readAll());
+        }
+
 
         QString sTmp="Reading : "+arrOutput;
 
